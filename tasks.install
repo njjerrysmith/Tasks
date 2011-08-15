@@ -1,0 +1,108 @@
+<?php	// $Id$
+/**
+ * Implementation of hook_schema()
+	*/
+function tasks_schema() {
+  $schema['email_groups'] = array(
+    'description' => 'Table holds information related to email groups',
+    'fields' => array(
+      'gid' => array(
+        'description' => 'Unique id of the email group',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ),
+      'gtitle' => array(
+        'description' => 'Text title of the group',
+        'type' => 'varchar',
+        'length' => '225',
+        'not null' => TRUE,
+      ),
+      'pid' => array(
+        'description' => 'Parent ID. Links to the {email_parents} table',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'owner_id' => array(
+        'description' => 'UID of the person who created the table',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('gid'),
+  );
+  $schema['email_members'] = array(
+    'description' => 'Members of the email groups',
+    'fields' => array(
+      'eid' => array(
+        'description' => 'Unique identifier for the {email_members} table ',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ),
+      'gid' => array(
+        'description' => 'ID linking email to a group in the {email_group} table',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'email' => array(
+        'description' => 'Email',
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('eid'),
+  );
+  $schema['email_parents'] = array(
+    'description' => 'Parent Groups table to organize recipients dropdown',
+    'fields' => array(
+      'pid' => array(
+        'description' => 'Parent ID. Unique ID for each parent',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ),
+      'ptitle' => array(
+        'description' => 'Text title for each parent identifier',
+        'type' => 'varchar',
+        'length' => '50',
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('pid'),
+  );
+  $schema['tickets'] = array(
+    'description' => 'Table containing information for each ticket',
+    'fields' => array(
+      'tid' => array(
+        'description' => 'Unique id for each ticket.',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ),
+      'title' => array(
+        'description' => 'Text title for each ticket',
+        'type' => 'varchar',
+        'length' => '50',
+        'not null' => TRUE,
+      ),
+      'price' => array(
+        'description' => 'Varchar price of each ticket (format $##.##)',
+        'type' => 'varchar',
+        'length' => '50',
+        'not null' => TRUE,
+      ),
+      'sid' => array(
+        'description' => 'Season ID. Ticket season is associated with.',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('tid'),
+  );
+}
+
+function tasks_install() {
+
+}
+
+function tasks_uninstall() {
+
+}

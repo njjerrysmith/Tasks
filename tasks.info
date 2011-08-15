@@ -1,0 +1,20 @@
+; $Id$
+name           = Tasks
+description    = This module is responsible for the box office, and email system functions.<br /> Developed by <a href="http://www.jerryksmith.com">Jerry Smith</a>.
+package        = RULTC
+core           = 7.x
+version        = 7.x-1.0
+
+dependencies[] = season
+
+files[] = tasks.module
+files[] = email.inc
+files[] = tickets.inc
+files[] = tickets.admin.inc
+files[] = tasks.views.inc
+
+;handlers
+files[] = handlers/tasks_handler_filter_string.inc
+files[] = handlers/tasks_handler_argument_string.inc
+files[] = handlers/tasks_handler_field.inc
+files[] = handlers/tasks_handler_sort.inc
