@@ -1,0 +1,39 @@
+Topic of this File
+------------------
+
+  * Purpose of work
+  * Installation & Configuration
+  * Future Plans
+  * License and Warranty
+
+Purpose of work
+------------------
+
+This module is specifically designed for use on the Livingston Theatre Company's website as of the redesign of 2011. The module is created with the follow features:
+  * Front and Back End Box Office capabilities
+  * Email System
+
+The Box Office system is intended to be a completely independent box office, with the option to handle purchasing and payment locally or redirect the user to a site where they can purchase tickets. All information on ticket purchasers is presented in the Box Office Admin pages so that the appropriate staff can use it as needed.
+
+The Email system is for company management to send emails to members and the public to keep then informed as to company events
+
+Installation & Configuration
+------------------
+
+To install this module first a working Drupal 7 (http://www.drupal.org) site must be running. Navigate to admin/modules/install and complete
+
+Configuration options are presented in the configuration menu admin/config
+
+Future Plans
+------------------
+
+Currently there is a way to collect a name and an email, but this should be expanded to collect a complete set of demographic information on prospective/current members
+
+License and Warranty
+------------------
+
+Tasks Module by Jerry Smith is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.
+Based on a work at github.com.
+
+This work is presented as is. I, Jerry Smith, do not guarantee anything will work smoothly and flawlessly. Using this work means you agree that anything can and will happen that is not in everyone's favor. You agree to not blame anyone if
+such situation arises. You will also take FULL AND COMPLETE responsibility for your usage of this work. I, nor any other person who worked with me on this, will not offer any support unless we deem it necessary.
